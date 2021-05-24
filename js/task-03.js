@@ -16,15 +16,15 @@ const images = [
   },
 ];
 
-const list = document.querySelector('#gallery');
+const GalleryEl = img => {
+  const { url, alt } = img;
+  return `<li> <img src= ${url} alt= ${alt} width= 720 height = 480></li>`;
+};
 
+const gallerySet = images.map(GalleryEl);
 
-list.insertAdjacentHTML('afterbegin', '<li> <img>  </li > ');
-    const image = document.createElement('img')
-image.setAttribute('src', 'https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260');
-image.alt = 'Orange and White Koi Fish Near Yellow Koi Fish';
-document.body.append(list)
-list.insertAdjacentHTML('beforebegin', '<h2>beforebegin заголовок</h2>');
-list.insertAdjacentHTML('beforeend', '<li>beforeend item</li>');
-list.insertAdjacentHTML('afterend', '<p>afterend текст</p>');
-
+const galleryAll = document.querySelector('#gallery');
+galleryAll.insertAdjacentHTML('afterbegin', gallerySet);
+galleryAll.style.listStyle = 'none';
+galleryAll.style.display = 'flex row';
+galleryAll.style.backgroundColor = '#fff', 'boxShadow = 0 2.8px 2.2px red, 0 6.7px 5.3px blue, 0 12.5px 10px green,0 22.3px 17.9px purple, 0 41.8px 33.4px orange, 0 100px 80px teal';
