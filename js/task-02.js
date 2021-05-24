@@ -21,19 +21,32 @@ const ingredients = [
 
 // // lists.innerHTML = markup;
 // lists.append(markup)
+// const list = document.querySelector('#ingredients');
+
+// const potato = document.createElement('li');
+// potato.textContent = 'Картопля';
+// const mushrooms = document.createElement('li');
+// mushrooms.textContent = 'Гриби';
+// const garlic = document.createElement('li');
+// garlic.textContent = 'Часник'
+// const tomatoes = document.createElement('li');
+// tomatoes.textContent = 'Помідори';
+// const green = document.createElement('li');
+// green.textContent = 'Зелень';
+// const prepare = document.createElement('li');
+// prepare.textContent = 'Приправи';
+
+// list.append(potato, mushrooms, garlic, tomatoes, green, prepare);
+
 const list = document.querySelector('#ingredients');
 
-const potato = document.createElement('li');
-potato.textContent = 'Картопля';
-const mushrooms = document.createElement('li');
-mushrooms.textContent = 'Гриби';
-const garlic = document.createElement('li');
-garlic.textContent = 'Часник'
-const tomatoes = document.createElement('li');
-tomatoes.textContent = 'Помідори';
-const green = document.createElement('li');
-green.textContent = 'Зелень';
-const prepare = document.createElement('li');
-prepare.textContent = 'Приправи';
+const createIngredientEl = ingredient => {
+    const itemEl = document.createElement('li');
+    itemEl.textContent = ingredient;
 
-list.append(potato, mushrooms, garlic, tomatoes, green, prepare);
+    return itemEl;
+};
+
+const createIngredientsList = ingredients.map(createIngredientEl);
+
+list.append(...createIngredientsList);
