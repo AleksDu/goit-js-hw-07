@@ -17,7 +17,7 @@ if (inputRef.value.length === Number(inputRef.dataset.length)) {
         wrongText.textContent = 'Вы ввели не правильное количество символов';
 
         if (inputRef.classList.contains('valid)')) {
-            inputRef.classlist.remove('valid');
+            inputRef.classList.remove('valid');
         };
     };
 };
