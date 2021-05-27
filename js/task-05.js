@@ -3,8 +3,11 @@ const refs = {
     greeting: document.querySelector('#name-output'),
 };
 
-refs.input.addEventListener('input', onInputChange)
+refs.input.addEventListener('input',function () {
 
-function onInputChange(event) {
-refs.greeting.textContent = event.currentTarget.value;
-};
+    if (refs.input.value.trim() === '') {
+        refs.greeting.textContent = 'незнайомець';
+    } else {
+        refs.greeting.textContent = refs.input.value.trim();
+    };
+});
